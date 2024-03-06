@@ -1,0 +1,73 @@
+<html>
+    {% load static %}
+    <head>
+        <script>
+            function logged()
+            {
+                alert("You are LOGGED IN");
+            }
+            </script>
+        <style>
+            body{
+                background: url("/static/image/food.webp");
+            }
+#y{
+height:640px;
+width: 100%;
+background:rgba(0,0,0, .4); 
+float: left;
+
+
+}
+
+#l{
+height:450px;
+width: 60%;
+background:palevioletred; 
+float: left; 
+margin: 90px;
+border-radius: 7px ;
+
+}
+#l:hover{
+background:linear-gradient(45deg,rgba(50,177,40, .6),rgba(255,255,255, .6));
+}
+
+
+#student{
+margin:50px 50px;
+color:black;
+font-weight: bolder;
+font-family: Arial, Helvetica, sans-serif;
+
+}
+#Teacher{
+margin:50px 50px;
+color:white;
+}
+.t{
+height: 40px;
+width: 100%;
+border: 2px solid green;
+border-radius: 4px;
+box-sizing: border-box;
+margin-bottom: 15px;
+
+}
+        </style>
+    </head>
+    <body>
+<div id="y">
+                <div id="l">
+                    <h1 style=" text-align: center; color: #230da0;">LOGIN</h1>
+                    <div id="student">
+                            USER NAME <br><input type="text" class="t"/><br>
+                            PASSWORD <br><input type="text"class="t"/><br>
+                            RE-PASSWORD <br><input type="text"class="t"/><br>
+                            <a href=""><input type="submit" onclick="logged()" value="SAVE" style="border:none;width: 103%; height: 30px; font-weight: bold; background-color: #2c7ad6;"></a>
+                            <a href="#" style="color:red; text-decoration: none;"><p >forget password?</p></a>
+                    </div>
+                </div>
+            </div> 
+            </body>
+            </html>

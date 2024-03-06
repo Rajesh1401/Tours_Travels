@@ -1,0 +1,43 @@
+<html>
+    {%load static %}
+    <head>
+    <style>
+        a{
+            text-decoration: none;
+            color:wheat;
+        }
+    body
+    {
+    background: url("/static/image/food.webp");
+    background-size:cover;
+    }
+    table
+    {
+    color: wheat;
+    width:100%;
+    border-style:inset;
+    font-size:25;
+    }
+    h1
+    {
+    background-color:pink;
+    text-align:center;
+    }
+    table
+    {
+    background-color:maroon;
+    }
+    </style>
+    </head>
+    <body>
+    <h1>FOOD Ordering System
+    </h1>
+    <table>
+    <tr color="purple">
+    <th><a href="{% url 'foodlogin' %}">Login</a></th>
+    <th><a href="{% url 'foodorder' %}">Menu Order</a></th>
+    <th><a href="{% url 'foodcontact' %}">Contact Us</a></th>
+    </tr>
+    </table>
+    </body>
+    </html>

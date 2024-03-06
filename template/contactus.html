@@ -1,0 +1,171 @@
+<html> 
+	{% load static %}
+	<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+<body>
+	<script>
+		function info()
+		{
+			alert("Information Processed")
+		}
+	</script>
+	<style>
+		button
+		{
+			background-color: #420529;
+			color:rgb(250, 247, 247) ;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-weight: bolder;
+			font-style: italic;
+			border-radius: 5px;
+			cursor: pointer;
+			box-shadow: 0 0 10px rgba(14, 0, 0, 0);
+			align-content: center;
+			padding: 10px;
+			
+		}
+		#container
+		{
+			text-align: center;
+		}
+		.main-list {
+  float: right;
+  font-variant: small-caps;
+  list-style-type: none;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 1000px) {
+  .main-list {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-list {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main-list {
+    font-size: 7px;
+    font-weight: bold;
+  }
+}
+
+.main-list-item {
+  display: inline-block;
+}
+
+.main-list-item a {
+  text-decoration: none;
+  color: black;
+  border: 1px solid transparent;
+  padding: 5px 20px;
+  transition: 0.7s ease;
+}
+
+.main-list-item a:hover {
+  background-color: rgb(89, 73, 46);
+}
+
+.active {
+  background-color: rgb(89, 73, 46);
+}
+
+.history-list {
+  margin-left: 40px;
+}
+
+.history-list a {
+  text-decoration: none;
+}
+		body
+		{
+			background: url("/static/image/contact-us.jpg");
+			background-color: bisque;
+			font-weight: bolder;
+			background-size: cover;
+			background-image: -webkit-image-set();
+		}
+		a{
+			text-decoration: none;
+		}
+		form{
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-weight: bolder;
+		}
+		.query_container { float:left;width:100%;}
+@media screen and (min-width: 1317px) { .query_container { max-width:300px; } }
+.query_container div { margin-top:30px;padding:10px;}
+.query_container div:first-child { border:1px solid #ddd; box-shadow:0px 0px 3px 0px #ddd;}
+.query_container div .form-container { max-width:500px;margin:0 auto; }
+.query_container div .form-container label { display:block;padding:20px;font-weight:normal; }
+.query_container div .form-container label div { margin-top:6px;padding:10px;border:1px solid #ccc; }
+.query_container div .form-container a { margin:20px;display:block;padding:10px;border-radius:4px;background-color:#008AB8;color:#fff;text-align:center; }
+.query_container .call-link { position:relative;display:block;margin:10px;margin-top:10px;padding:10px;border-radius:5px;background-color:#d00;font-weight:bold;color:#fff;text-align:center; }
+.query_container .title { display:block;margin:20px;padding:7px 20px;line-height:30px;border-bottom:1px solid #eee;background-color:#fff;font-size:19px;font-weight:bold;color:#555;text-align:center;text-transform:uppercase; }
+	</style>
+	</style>
+	<nav>
+        <div class="main">
+          <ul class="main-list">
+            <li class="main-list-item"><a href="{% url 'index' %}">Home</a></li>
+            <li class="main-list-item">
+              <a href="{% url 'famousplaces' %}">Famous Places</a>
+            </li>
+            <li class="main-list-item">
+              <a href="{% url 'restaurants' %}">Restaurants</a>
+            </li>
+            <li class="main-list-item"><a href="{% url 'booking' %}">BOOK CAB</a></li>
+            <li class="active main-list-item">
+              <a href="{% url 'contactus' %}">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+<div class="query_container">
+	<div>
+		<a href='tel:08050005222' class='call-link'>CONTACT US</a>
+		<span class='title'>Send Your Query</span>
+		<div class='form-container'>
+			<form id="enquiry-form" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="about" value="Regarding - Cab Booking" />
+				<input type="hidden" name="is_query_submitted" value="true" />
+				<label>
+					Name
+					<div>
+						<input name="customer_name" id="customer_name" style='width:100%;' placeholder="Enter your name"  required/>
+					</div>
+				</label>
+				<label>
+					Mobile Number
+					<div>
+						<input name="mobile_number" id="mobile_number" style='width:100%;' placeholder="Enter your mobile number" required/>
+					</div>
+				</label>
+				<label>
+					Email Id
+					<div>
+						<input name="email_id" id="email_id" style='width:100%;' placeholder="Enter your emailid" required/>
+					</div>
+				</label>
+				<label>
+					Query
+					<div>
+						<textarea name="query_text" id="query_text" style='width:100%;' placeholder="Write your query here" required></textarea>
+					</div>
+				</label>
+				<div id="container">
+                <button onclick="info()">Submit query</button>
+				</div>
+			</form>
+		</div>	
+	</div>	
+</div>	
+</body>
+</html>		

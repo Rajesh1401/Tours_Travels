@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #ebe5dd;
+}
+/* HEADER */
+
+.main {
+  margin: auto;
+  max-width: 1200px;
+}
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/static/image/bangalore3.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+/* NAVIGATION */
+.main-list {
+  float: right;
+  font-variant: small-caps;
+  list-style-type: none;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 1000px) {
+  .main-list {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-list {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main-list {
+    font-size: 7px;
+    font-weight: bold;
+  }
+}
+
+.main-list-item {
+  display: inline-block;
+}
+
+.main-list-item a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid transparent;
+  padding: 5px 20px;
+  transition: 0.7s ease;
+}
+
+.main-list-item a:hover {
+  background-color: rgb(89, 73, 46);
+}
+
+.active {
+  background-color: rgb(89, 73, 46);
+}
+
+.history-list {
+  margin-left: 40px;
+}
+
+.history-list a {
+  text-decoration: none;
+}
+/* TITLE */
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading {
+  color: white;
+  font-size: 4vw;
+  font-variant: small-caps;
+}
+
+/* MAIN CONTENT */
+.page-wrapper {
+  min-height: 100%;
+}
+
+
+
+/* FAMOUS PLACES PAGE */
+/* IMAGE GALLERY */
+.image-gallery {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.gallery {
+  border: 1px solid #ccc;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.des {
+  padding: 15px;
+  text-align: center;
+}
+
+.responsive {
+  margin-top: 10px;
+  padding: 0 7px;
+  width: 290px;
+}
+
+
+    </style>
+    <title>Explore BANGALORE</title>
+  </head>
+
+  <body>
+    <!-- Header and Nav -->
+    <header>
+      <nav>
+        <div class="main">
+          <ul class="main-list">
+            <li class="main-list-item"><a href="{% url 'index' %}">Home</a></li>
+            <li class="active main-list-item">
+              <a href="{% url 'famousplaces' %}">Famous Places</a>
+            </li>
+            <li class="main-list-item">
+              <a href="{% url 'restaurants' %}">Restaurants</a>
+            </li>
+            <li class="main-list-item"><a href="{% url 'booking' %}">BOOK CAB</a></li>
+            <li class="main-list-item">
+              <a href="{% url 'contactus' %}">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- // Header and Nav -->
+
+      <!-- Title heading -->
+      <div class="title">
+        <span class="heading">Famous Places</span>
+      </div>
+    </header>
+    <!-- // Title heading -->
+
+    <!-- PAGE WRAPPER -->
+    <div class="page-wrapper">
+      <div class="history">
+        <h1 class="history-heading1">Famous Tourist Attraction in Bangalore</h1>
+        <hr />
+      </div>
+      <!-- IMAGE GALLERY -->
+      <div class="image-gallery">
+        <!-- IMAGE -->
+        <div class="responsive">
+          <div class="gallery">
+            <a href="{% static 'image/Bangalore-Palace.webp' %}" target="_blank"
+              ><img
+                width="200"
+                height="200"
+                src="{% static 'image/Bangalore-Palace.webp' %}"
+                alt="Bangalore Palace"
+                title="Bangalore Palace"
+            /></a>
+            <div class="des"><strong>Bangalore Palace</strong>Built by Chamaraja Wodeyar in the year 1887, Bangalore Palace is an inspired design by England’s Windsor Castle and is one of the best tourist places in Bangalore.
+            </div>
+          </div>
+        </div>
+        <!-- // IMAGE -->
+
+        <!-- IMAGE -->
+        <div class="responsive">
+          <div class="gallery">
+            <a
+              href="{% static 'image/Tipu-Sultan’s-Summer-Palace.webp' %}"
+              target="_blank"
+              ><img
+                width="200"
+                height="200"
+                src="{% static 'image/Tipu-Sultan’s-Summer-Palace.webp' %}"
+                alt="Tippu Sultan's Summer Palace"
+                title="Tippu Sultan's Summer Palace"
+            /></a>
+            <div class="des">
+              <strong>Tipu-Sultan’s-Summer-Palace</strong>Tipu Sultan Fort ideally represents the artistic talent which thrived in the past and is among the most fascinating Bangalore tourist places.
+            </div>
+          </div>
+        </div>
+        <!-- IMAGE -->
+        <div class="responsive">
+          <div class="gallery">
+            <a href="{% static 'image/Lal-Bagh-Botanical-Gardens.webp' %}" target="_blank"
+              ><img
+                width="200"
+                height="200"
+                src="{% static 'image/Lal-Bagh-Botanical-Gardens.webp' %}"
+                alt="Lal-Bagh-Botanical-Gardens"
+                title="Lal-Bagh-Botanical-Gardens"
+            /></a>
+            <div class="des">
+              <strong>LaL Bagh Botanical Gardens</strong>This botanical garden is one of the most beautiful places to visit in Bangalore, and perhaps all of India. Built by Haider Ali, the garden was later modified by Tipu Sultan.
+              
+            </div>
+          </div>
+        </div>
+        <!-- // IMAGE -->
+        <!-- IMAGE -->
+        <div class="responsive">
+          <div class="gallery">
+            <a href="{% static 'image/Nandi-Hills.webp' %}" target="_blank"
+              ><img
+                width="200"
+                height="200"
+                src="{% static 'image/Nandi-Hills.webp' %}"
+                alt="Nandi-Hills"
+                title="Nandi-Hills"
+            /></a>
+            <div class="des"><strong>Nandi Hills</strong>A perfect location to be one with nature, the hills are located 60kms away from the city. One the most popular viewpoint in Bangalore</div>
+          </div>
+        </div>
+        <!-- // IMAGE -->
+        <!-- IMAGE -->
+        <div class="responsive">
+          <div class="gallery">
+            <a href="{% static 'image/Cubbon-Park.webp' %}" target="_blank"
+              ><img
+                width="200"
+                height="200"
+                src="{% static 'image/Cubbon-Park.webp' %}"
+                alt="Cubbon-Park"
+                title="Cubbon-Park"
+            /></a>
+            <div class="des">
+              <strong>Cubbon-Park</strong>Situated over a sprawling 300 acres of land, the park was constructed by Richard Sankey. This massive green park along with well maintained lawns deserves a special mention.
+            </div>
+          </div>
+        </div>
+        <!-- // IMAGE -->
+        <!-- IMAGE -->
+        <div class="responsive">
+          <div class="gallery">
+            <a href="{% static 'image/National-Gallery-of-Modern-Art.webp' %}" target="_blank"
+              ><img
+                width="200"
+                height="200"
+                src="{% static 'image/National-Gallery-of-Modern-Art.webp' %}"
+                alt="National-Gallery-of-Modern-Art"
+                title="National-Gallery-of-Modern-Art"
+            /></a>
+            <div class="des">
+              The <strong>National-Gallery-of-Modern-Art</strong> The National Gallery for Modern Art, a collection of 500 paintings and a must visit for history lovers. Housing the works of popular artists including Rabindranath Tagore, Jamini Roy and others
+            </div>
+          </div>
+        </div>
+        <!-- // IMAGE -->
+        <!-- IMAGE -->
+        <div class="responsive">
+          <div class="gallery">
+            <a href="{% static 'image/Ulsoor-Lake.webp' %}" target="_blank"
+              ><img
+                width="200"
+                height="200"
+                src="{% static 'image/Ulsoor-Lake.webp' %}"
+                alt="Ulsoor-Lake"
+                title="Ulsoor-Lake"
+            /></a>
+            <div class="des">
+              <strong>Ulsoor Lake</strong> The picturesque lake is spread over an area of 125 acres and is located in the heart of the city. Constructed by Kempegowda II
+            </div>
+          </div>
+        </div>
+        <!-- // IMAGE -->
+        <!-- IMAGE -->
+        <div class="responsive">
+          <div class="gallery">
+            <a href="{% static 'image/Government-Museum.webp' %}" target="_blank"
+              ><img
+                width="200"
+                height="200"
+                src="{% static 'image/Government-Museum.webp' %}"
+                alt="Government-Museum"
+                title="Government-Museum"
+            /></a>
+            <div class="des">
+              <strong>Government-Museum</strong>Built in the year 1886, the museum houses few of the rare collections and represents multiple periods. 18 galleries in the museum comprise antique jewellery, Neolithic finds of varied civilizations .
+            </div>
+          </div>
+        </div>
+        <!-- // IMAGE -->
+        <!-- IMAGE -->
+        <div class="responsive">
+          <div class="gallery">
+            <a href="{% static 'image/Vidhana-Soudha.webp' %}" target="_blank"
+              ><img
+                width="200"
+                height="200"
+                src="{% static 'image/Vidhana-Soudha.webp' %}" 
+                alt="Vidhana-Soudha"
+                title="Vidhana-Soudha"
+            /></a>
+            <div class="des">
+              <strong>Vidhana-Soudha</strong> Its foundation stone was laid by Jawaharlala Nehru in the year 1951 and was finally completed in the year 1956. The largest legislative building in India, is situated close by to Cubbon Park.
+            </div>
+          </div>
+        </div>
+        <!-- // IMAGE -->
+        <!-- IMAGE -->
+        <div class="responsive">
+          <div class="gallery">
+            <a href="{% static 'image/Wonder-La-Water-Park.webp' %}" target="_blank"
+              ><img
+                width="200"
+                height="200"
+                src="{% static 'image/Wonder-La-Water-Park.webp' %}"
+                alt="Wonder-La-Water-Park"
+                title="Wonder-La-Water-Park"
+            /></a>
+            <div class="des">
+              <strong>Wonder-La-Water-Park</strong>The high-thrill dry rides of this park are the star attraction here, but it’s also famous for its numerous water rides and shows, and there are about 60 of such rides that you can enjoy here!
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <!-- // IMAGE GALLERY-->
+    </div>
+    <!-- // PAGE WRAPPER-->
+
+  </body>
+</html>

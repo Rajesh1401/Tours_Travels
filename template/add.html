@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>ADDITION</title>
+    </head>
+    <body>
+        <h1>Add two numbers</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="num1">Number 1:</label>
+            <input type="text" name="num1" id="num1" required><br><br><br>
+            <label for="num2">Number 2:</label>
+            <input type="text" name="num2" id="num2" required><br><br>
+            <input type="submit" value="ADD">
+        </form>
+    </body>
+</html>

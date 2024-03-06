@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #ebe5dd;
+}
+
+/* HEADER */
+
+.main {
+  margin: auto;
+  max-width: 1200px;
+}
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/static/image/bangalore.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+/* NAVIGATION */
+.main-list {
+  float: right;
+  font-variant: small-caps;
+  list-style-type: none;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 1000px) {
+  .main-list {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-list {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main-list {
+    font-size: 7px;
+    font-weight: bold;
+  }
+}
+
+.main-list-item {
+  display: inline-block;
+}
+
+.main-list-item a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid transparent;
+  padding: 5px 20px;
+  transition: 0.7s ease;
+}
+
+.main-list-item a:hover {
+  background-color: rgb(89, 73, 46);
+}
+
+.active {
+  background-color: rgb(89, 73, 46);
+}
+
+.history-list {
+  margin-left: 40px;
+}
+
+.history-list a {
+  text-decoration: none;
+}
+/* TITLE */
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading {
+  color: white;
+  font-size: 4vw;
+  font-variant: small-caps;
+}
+
+/* MAIN CONTENT */
+.page-wrapper {
+  min-height: 100%;
+}
+
+/* HISTORY */
+.history {
+  margin: 20px;
+}
+
+.history-para {
+  padding: 13px;
+}
+
+.history-heading2 {
+  margin: 2px;
+  padding-top: 20px;
+}
+
+/* IMAGE GALLERY */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 20%;
+  max-width: 20%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* FAMOUS PLACES PAGE */
+/* IMAGE GALLERY */
+.image-gallery {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.gallery {
+  border: 1px solid #ccc;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.des {
+  padding: 15px;
+  text-align: center;
+}
+
+.responsive {
+  margin-top: 10px;
+  padding: 0 7px;
+  width: 290px;
+}
+
+/* Restaurants Page */
+.restaurants {
+  padding: 10px;
+}
+
+.restaurants-link {
+  color: #6e0101;
+}
+
+/* STOPS Page*/
+.stops-link {
+  color: blue;
+}
+
+/* Hospitals Page */
+
+.hospitals-link {
+  color: green;
+}
+
+/* FOOTER */
+.footer {
+  background: #303036;
+  color: #d3d3d3;
+  height: 400px;
+  position: relative;
+}
+
+.footer .footer-bottom {
+  background-color: #343a40;
+  color: #686868;
+  text-align: center;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.footer .footer-content {
+  height: 350px;
+  display: flex;
+}
+
+.footer .footer-content .footer-section {
+  flex: 1;
+  padding: 25px;
+}
+
+.footer .footer-content h1 {
+  color: white;
+}
+
+.footer-para {
+  margin: 10px 0;
+}
+
+.footer .footer-content .about .contact span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+.footer .footer-content .about .socials a {
+  border: 1px solid gray;
+  width: 45px;
+  height: 38px;
+  padding-top: 5px;
+  margin-right: 5px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.3em;
+  text-decoration: none;
+  color: #d3d3d3;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.footer .footer-content .about .socials a:hover {
+  color: white;
+  border: 1px solid white;
+  transition: all 0.3s;
+}
+
+.footer-section {
+  text-align: center;
+}
+
+.logo-text {
+  font-variant: initial;
+}
+
+.logo-text .logo-span {
+  color: #a2c376;
+}
+.btn {
+  text-transform: capitalize;
+  padding: 1.3rem;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background-color: var(--color-blue-lighter-2);
+  color: #000;
+  border: none;
+  transition: background-color 0.4s;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--color-blue-lighter-1);
+}
+.btn--drop-shadow {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+.btn--secondary {
+  border: 1.5px solid var(--color-blue-lighter-2);
+  background-color: transparent;
+}
+.icon
+{
+width:200px;
+float:left;
+height:70px;
+}
+.logo
+{
+color:rgb(241, 9, 241);
+font-size:35px;
+font-family:helvetica;
+padding-left:20px;
+float:left;
+padding-top:10px;
+margin-top:5px;
+}
+.signup-box {
+  width: 360px;
+  height: 400px;
+  margin: auto;
+  background-color: transparent;
+  border-color: 2px white;
+  border-radius: 3px;
+  align-content:  center;
+  position:absolute;
+   right:80px;
+   bottom:20px;
+   box-shadow: 0 15px 25px white;
+   color: whitesmoke;
+}
+
+.login-box {
+  width: 360px;
+  height: 80px;
+  margin: auto;
+  border-radius: 3px;
+  border-color: wheat;
+  background-color: transparent;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 15px;
+}
+
+h4 {
+  text-align: center;
+}
+
+form {
+  width: 300px;
+  margin-left: 20px;
+  height: 500px;
+}
+
+form label {
+  display: flex;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+form input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+}
+input[type="submit"] {
+  width: 320px;
+  height: 35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #49c1a2;
+  color: white;
+  font-size: 18px;
+}
+p {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 15px;
+}
+.para-2 {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  margin-top: -10px;
+}
+.para-2 a {
+  color: #49c1a2;
+}
+a{
+  text-decoration: none;
+}
+
+  </style>
+  <script>
+ function log()
+ {
+  alert("Registered Successfully");
+ }
+  </script>
+  <title>Explore World</title>
+</head>
+
+<body>
+  <!-- Header and Nav -->
+  <header>
+    
+    <nav>
+      <div class="icon">
+        <h2 class="logo">TOURS and TRAVELS</h2>
+        </div>
+        
+      <div class="main">
+        
+        <ul class="main-list">
+          <li class="active main-list-item"><a href="{% url 'index' %}">Home</a></li>
+          <li class="main-list-item"><a href="{% url 'famousplaces' %}">Famous Places</a></li>
+          <li class="main-list-item"><a href="{% url 'restaurants' %}">Restaurants</a></li>
+          <li class="main-list-item"><a href="{% url 'booking' %}">Book CAB</a></li>
+          <li class="main-list-item"><a href="{% url 'contactus' %}">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- // Header and Nav -->
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+      
+  <form method="post">
+        {% csrf_token %}
+        <label>Name</label>
+        <input type="text" placeholder="Your Name" name="suname" id="suname" required/>
+        <label>Email</label>
+        <input type="email" placeholder="Your Email" name="suemail" id="suemail" required/>
+        <label>Password</label>
+        <input type="password" placeholder="Password" name="supassword" id="supassword" required/>
+        <input type="submit" value="REGISTER" onclick="log()">
+      <p class="para-2">
+        Already have an account? <a href="{% url 'signin' %}">Login here</a>
+      </p>
+    </form>
+    </div>
+
+    
+  </header>
+  <!-- // Title heading -->
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h1 class="logo-text">
+          <span class="logo-span">Q</span>urrath
+          <span class="logo-span">U</span>lain
+        </h1>
+        <p class="footer-para">
+          I am a creative, Web Developer 
+        </p>
+        <div class="contact">
+          <span><i class="fas fa-phone"></i>&nbsp; +91-9902779863</span>
+          <span
+            ><i class="fas fa-envelope"></i>&nbsp;
+            qurrathulain345@gmail.com</span
+          >
+        </div>
+        <div class="socials">
+          <a
+            href="https://www.facebook.com/profile.php?id=100086739085443"
+            target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/qurrath-u-a63a4a174/"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="/https://www.instagram.com/qurrath.ul.ain/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://github.com/qurrath-0/" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; | Designed By Qurrath
+    </div>
+  </div>
+</footer>
+<!-- // Footer -->
+</body>
+
+</html>
